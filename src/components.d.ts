@@ -12,58 +12,53 @@ import '@stencil/core';
 
 export namespace Components {
 
-  interface MyComponent {
-    /**
-    * The first name
-    */
-    'first': string;
-    /**
-    * The last name
-    */
-    'last': string;
-    /**
-    * The middle name
-    */
-    'middle': string;
+  interface MfxPlayer {}
+  interface MfxPlayerAttributes extends StencilHTMLAttributes {
+    'onMfxPlayerInit'?: (event: CustomEvent) => void;
   }
-  interface MyComponentAttributes extends StencilHTMLAttributes {
-    /**
-    * The first name
-    */
-    'first'?: string;
-    /**
-    * The last name
-    */
-    'last'?: string;
-    /**
-    * The middle name
-    */
-    'middle'?: string;
+
+  interface MfxTimeline {
+    'handler': string;
+  }
+  interface MfxTimelineAttributes extends StencilHTMLAttributes {
+    'handler'?: string;
+    'onMfxTimelineInit'?: (event: CustomEvent) => void;
+    'onMfxTimelineRender'?: (event: CustomEvent) => void;
   }
 }
 
 declare global {
   interface StencilElementInterfaces {
-    'MyComponent': Components.MyComponent;
+    'MfxPlayer': Components.MfxPlayer;
+    'MfxTimeline': Components.MfxTimeline;
   }
 
   interface StencilIntrinsicElements {
-    'my-component': Components.MyComponentAttributes;
+    'mfx-player': Components.MfxPlayerAttributes;
+    'mfx-timeline': Components.MfxTimelineAttributes;
   }
 
 
-  interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {}
-  var HTMLMyComponentElement: {
-    prototype: HTMLMyComponentElement;
-    new (): HTMLMyComponentElement;
+  interface HTMLMfxPlayerElement extends Components.MfxPlayer, HTMLStencilElement {}
+  var HTMLMfxPlayerElement: {
+    prototype: HTMLMfxPlayerElement;
+    new (): HTMLMfxPlayerElement;
+  };
+
+  interface HTMLMfxTimelineElement extends Components.MfxTimeline, HTMLStencilElement {}
+  var HTMLMfxTimelineElement: {
+    prototype: HTMLMfxTimelineElement;
+    new (): HTMLMfxTimelineElement;
   };
 
   interface HTMLElementTagNameMap {
-    'my-component': HTMLMyComponentElement
+    'mfx-player': HTMLMfxPlayerElement
+    'mfx-timeline': HTMLMfxTimelineElement
   }
 
   interface ElementTagNameMap {
-    'my-component': HTMLMyComponentElement;
+    'mfx-player': HTMLMfxPlayerElement;
+    'mfx-timeline': HTMLMfxTimelineElement;
   }
 
 

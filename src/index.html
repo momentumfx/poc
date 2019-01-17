@@ -4,12 +4,29 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
   <title>Stencil Component Starter</title>
-  <script src="/build/mycomponent.js"></script>
+  <script src="/build/mfx.js"></script>
 
 </head>
 <body>
+  <!-- <mf-timeline name="root">
+    <div>
+      <mf-timeline name="child"> 
+          <mfx-player>
+              <div>
+                hi
+              </div>
+            </mfx-player>       
+        <mf-timeline name="child2">
+          <mfx-player>
+            <div>
+              hi
+            </div>
+          </mfx-player>
+        </mf-timeline>
+      </mf-timeline>
+    </div>
+  </mf-timeline> -->
 
-  <my-component first="Stencil" middle="momentum" last="'Don't call me a framework' JS"></my-component>
-
+  <mf-timeline handler="myTimeline"></mf-timeline>
 </body>
 </html>
