@@ -1,34 +1,14 @@
-<button>start</button>
-
-<div @timeline="HomePage">
-  <h1>Home</h1>
-  <p @animate="style | animate:1000">....</p>
-  <ul @animate="enter, leave">
-    <li></li>
-  </ul>
+<div mfx-timeline="">
+  <div mfx-player="">
+    <div mfx-capture="">
+  </div>
 </div>
 
-<script>
-interface Effect {
-  type: 'style'|'enter'|'leave'|'move'|'class'|'custom'|'player';
-  element: Element;
-  domFn: Function;
-  players: Player[];
-}
+momentum.update();
+momentum.autoUpdate();
 
-@MomentumHandler('HomePage', ['style', 'class', 'enter', 'leave'])
-class HomePageAnimations {
-  constructor(inputStream, outputStream) {
-  }
-
-  connectedCallback() {
-  }
-
-  captureEffect(effect: Effect, firstRender: boolean) {
-    this.outputStream.next(playersArray);
-  }
-}
-</script>
-
-
-customElements.define('animate', new AnimateElement(), { extends: HTMLElement });
+  mfx-timeline 
+      \
+      mfx-player
+        \
+          mfx-capture

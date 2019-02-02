@@ -14,9 +14,13 @@
     "build": "stencil build --docs",
     "start": "stencil build --dev --watch --serve",
     "test": "stencil test --spec --e2e",
-    "test.watch": "stencil test --spec --e2e --watchAll"
+    "test.watch": "stencil test --spec --e2e --watchAll",
+    "demo": "./node_modules/.bin/nf start"
   },
-  "dependencies": {},
+  "dependencies": {
+    "foreman": "^3.0.1",
+    "parcel-bundler": "^1.11.0"
+  },
   "devDependencies": {
     "@stencil/core": "0.16.2"
   },

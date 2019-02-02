@@ -12,15 +12,18 @@ import '@stencil/core';
 
 export namespace Components {
 
-  interface MfxPlayer {}
-  interface MfxPlayerAttributes extends StencilHTMLAttributes {
+  interface Mfx2player {
+    'listen': string;
+  }
+  interface Mfx2playerAttributes extends StencilHTMLAttributes {
+    'listen'?: string;
     'onMfxPlayerInit'?: (event: CustomEvent) => void;
   }
 
-  interface MfxTimeline {
+  interface Mfx1timeline {
     'handler': string;
   }
-  interface MfxTimelineAttributes extends StencilHTMLAttributes {
+  interface Mfx1timelineAttributes extends StencilHTMLAttributes {
     'handler'?: string;
     'onMfxTimelineInit'?: (event: CustomEvent) => void;
     'onMfxTimelineRender'?: (event: CustomEvent) => void;
@@ -29,36 +32,36 @@ export namespace Components {
 
 declare global {
   interface StencilElementInterfaces {
-    'MfxPlayer': Components.MfxPlayer;
-    'MfxTimeline': Components.MfxTimeline;
+    'Mfx2player': Components.Mfx2player;
+    'Mfx1timeline': Components.Mfx1timeline;
   }
 
   interface StencilIntrinsicElements {
-    'mfx-player': Components.MfxPlayerAttributes;
-    'mfx-timeline': Components.MfxTimelineAttributes;
+    'mfx-2player': Components.Mfx2playerAttributes;
+    'mfx-1timeline': Components.Mfx1timelineAttributes;
   }
 
 
-  interface HTMLMfxPlayerElement extends Components.MfxPlayer, HTMLStencilElement {}
-  var HTMLMfxPlayerElement: {
-    prototype: HTMLMfxPlayerElement;
-    new (): HTMLMfxPlayerElement;
+  interface HTMLMfx2playerElement extends Components.Mfx2player, HTMLStencilElement {}
+  var HTMLMfx2playerElement: {
+    prototype: HTMLMfx2playerElement;
+    new (): HTMLMfx2playerElement;
   };
 
-  interface HTMLMfxTimelineElement extends Components.MfxTimeline, HTMLStencilElement {}
-  var HTMLMfxTimelineElement: {
-    prototype: HTMLMfxTimelineElement;
-    new (): HTMLMfxTimelineElement;
+  interface HTMLMfx1timelineElement extends Components.Mfx1timeline, HTMLStencilElement {}
+  var HTMLMfx1timelineElement: {
+    prototype: HTMLMfx1timelineElement;
+    new (): HTMLMfx1timelineElement;
   };
 
   interface HTMLElementTagNameMap {
-    'mfx-player': HTMLMfxPlayerElement
-    'mfx-timeline': HTMLMfxTimelineElement
+    'mfx-2player': HTMLMfx2playerElement
+    'mfx-1timeline': HTMLMfx1timelineElement
   }
 
   interface ElementTagNameMap {
-    'mfx-player': HTMLMfxPlayerElement;
-    'mfx-timeline': HTMLMfxTimelineElement;
+    'mfx-2player': HTMLMfx2playerElement;
+    'mfx-1timeline': HTMLMfx1timelineElement;
   }
 
 

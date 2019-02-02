@@ -3,7 +3,7 @@ import momentum from '../../core';
 import { Player } from '../..';
 
 @Component({
-  tag: 'mfx-timeline'
+  tag: 'mfx-1timeline'
 })
 export class MfxTimeline {
   @Prop() handler: string;
